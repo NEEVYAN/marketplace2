@@ -49,12 +49,14 @@ export default function Section1()
 
 return (
     <div className="mb-2 mt-1">
-      <Grid container spacing={2}>
-        <Grid item xs={12} lg={6}>
-          <BannerOne />
-        </Grid>
 
-        <Grid item xs={12} lg={6}>
+
+
+      <Grid container spacing={2}>
+
+
+
+      <Grid item xs={12} lg={6}>
           <Stack spacing={1} height="100%">
             <Typography
               variant="h6"
@@ -83,7 +85,7 @@ return (
                       sx={{
                         width: { xs: "50px", sm: "60px" },
                         height: { xs: "50px", sm: "60px" },
-                        borderRadius: "10%",
+                        borderRadius: "50%",
                         overflow: "hidden",
                         display: "flex",
                         justifyContent: "center",
@@ -116,6 +118,18 @@ return (
                 </Grid>
               ))}
             </Grid>
+
+
+            <Typography
+              variant="h6"
+              gutterBottom
+              sx={{
+                fontSize: { xs: ".8rem", sm: "1.25rem", md: "1.5rem", lg: "1rem", xl: "2rem" },
+              }}
+            >
+              Mostly Preferred 
+            </Typography>
+
 
             {isClient && (
               <Grid container style={{ marginTop: "2%" }}>
@@ -151,6 +165,12 @@ return (
             )}
           </Stack>
         </Grid>
+
+
+        <Grid item xs={12} lg={6}>
+          <BannerOne />
+        </Grid>
+
       </Grid>
     </div>
   );

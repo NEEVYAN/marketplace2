@@ -111,7 +111,6 @@ export default async function Section2({ products, breadcrumb = "Some Mix for yo
         sx={{
           display: "flex",
           overflowX: "auto",
-          gap: 2,
           mb: 4,
           pb: 1,
           "&::-webkit-scrollbar": { display: "none" },

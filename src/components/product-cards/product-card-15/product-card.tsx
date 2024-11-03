@@ -87,6 +87,7 @@ export default function ProductCard14({ product }: Props) {
     marginBottom: theme.spacing(2),
     fontSize: ".6rem",
 
+
     [theme.breakpoints.down("sm")]: {
       fontSize: "0.6rem",
       marginBottom: theme.spacing(1.5),
@@ -101,9 +102,23 @@ export default function ProductCard14({ product }: Props) {
 
       <Link href={`/products/${slug}`}>
         <ImageWrapper>
-          <StyledLazyImage alt={title} width={260} height={200} src={banner2} />
+          <StyledLazyImage alt={title} width={260} height={100} src={banner2} />
           <StudentLabel>Student</StudentLabel>
-          <IconButton className="favorite-icon" onClick={handleAddToFavorites}>
+
+
+          <IconButton
+            className="favorite-icon"
+            onClick={handleAddToFavorites}
+            style={{
+              height: "30px", 
+              width: "30px",  
+              backgroundColor: 'white',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center', 
+              justifyContent: 'center',
+            }}
+          >
             <FavoriteBorder fontSize="small" />
           </IconButton>
         </ImageWrapper>

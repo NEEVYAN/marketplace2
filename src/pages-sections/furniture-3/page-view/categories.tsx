@@ -18,10 +18,12 @@ export default async function FurnitureThreeCategoriesPageView({ slug }: Props) 
 
   return (
     <Fragment>
+
+      
       <Section2 products={products} breadcrumb={breadcrumb} />
-
-
       <Setting />
+
+
     </Fragment>
   );
 }

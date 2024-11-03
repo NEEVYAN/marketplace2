@@ -17,7 +17,7 @@ export default async function FurnitureThreePageView() {
       <Section1 />
 
       {/* ALL PRODUCTS */}
-      <Section2 products={products} />
+      {/* <Section2 products={products} /> */}
 
       {/* SETTINGS IS USED ONLY FOR DEMO, YOU CAN REMOVE THIS */}
       <Setting />
