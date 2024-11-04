@@ -7,7 +7,7 @@ import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { StyledRoot } from "./styles";
 // IMPORT IMAGES
-import banner1 from "../../../../../public/assets/images/banners/home7.jpg";
+import banner1 from "../../../../../public/assets/images/book3.jpeg";
 import { Height } from "@mui/icons-material";
 
 export default function BannerOne() {
@@ -22,9 +22,9 @@ export default function BannerOne() {
           fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem", lg: "1rem", xl: "2rem" },
           fontWeight: '600',
         }}
-        
+
       >
-        Near by You
+        Active Offers
       </Typography>
 
       <StyledRoot>
@@ -33,15 +33,23 @@ export default function BannerOne() {
 
 
 
-        <LazyImage src={banner1} alt="banner" style={{ height: "40%", marginTop:"10px"}}  />
-
+        <LazyImage
+          
+          src={banner1}
+          alt="banner"
+          style={{
+            marginTop: "10px",
+         
+            width: "100%", 
+          }}
+        />
 
         <div className="text-content">
-          <H2 lineHeight={1.2} fontSize={{ xl: 52, lg: 40, sm: 52, xs: 20 }}>
-            Time to Travel ! <br /> Explore now
+          <H2 lineHeight={1.2} fontSize={{ xl: 52, lg: 40, sm: 52, xs: 14 }}>
+            Check out offers <br /> Get 70% off on property
           </H2>
 
-          <Box
+          {/* <Box
             component="p"
             fontSize={{ xl: 18, lg: 16, sm: 14, xs: 12 }}
             sx={{
@@ -51,7 +59,7 @@ export default function BannerOne() {
             }}
           >
             Deoria Road, Singhariya, Kunraghat, Gorakhpur, Uttar Pradesh 273016
-          </Box>
+          </Box> */}
 
           {/* <Paragraph style={{width:"60vw"}} fontSize={{ xl: 18, lg: 16, sm: 18 }}>Deoria Road, Singhariya, Kunraghat, Gorakhpur, Uttar Pradesh 273016</Paragraph> */}
         </div>
@@ -60,11 +68,11 @@ export default function BannerOne() {
 
         <div className="button-wrapper">
           <Button color="primary" size="small" variant="contained">
-            Places Nearby
+            Claim now
           </Button>
         </div>
 
-        
+
       </StyledRoot>
     </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Grid from "@mui/material/Grid";
+import { Button, Grid } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -19,9 +19,12 @@ import banner2 from "../../../../public/assets/images/cities/c2.jpg";
 import banner3 from "../../../../public/assets/images/cities/c3.jpg";
 import banner4 from "../../../../public/assets/images/cities/c4.jpg";
 import banner5 from "../../../../public/assets/images/cities/c5.jpg";
+import nearby from "../../../../public/assets/images/cities/nearby.png";
+import city from "../../../../public/assets/images/cities/city.png";
 import homeImage1 from "../../../../public/assets/images/banners/home3.jpg";
 import homeImage2 from "../../../../public/assets/images/banners/home4.jpg";
 import homeImage3 from "../../../../public/assets/images/banners/home5.jpg";
+import { features } from "process";
 
 // Load Swiper modules and components only in the client
 let Swiper;
@@ -38,8 +41,29 @@ if (typeof window !== "undefined") {
   Autoplay = require("swiper").Autoplay;
 }
 
-export default function Section1() 
-{
+const slidesData = [
+  {
+    image: homeImage1,
+    title: "Venus Shft-in",
+    features: ["The place offers a vibrant community experience with seamless facilities"],
+    price: "₹999",
+  },
+  {
+    image: homeImage2,
+    title: "Paradise Swift",
+    features: ["Paradise Swift provides a fun-filled environment with activities for all ages."],
+    price: "₹1299",
+  },
+  {
+    image: homeImage3,
+    title: "Couple’s Paradise",
+    features: ["Couple’s Paradise offers romantic views and a cozy ambiance."],
+    price: "₹1999",
+  },
+];
+
+
+export default function Section1() {
 
   const [isClient, setIsClient] = useState(false);
 
@@ -47,7 +71,7 @@ export default function Section1()
     setIsClient(true);
   }, []);
 
-return (
+  return (
     <div className="mb-2 mt-1">
 
 
@@ -58,7 +82,7 @@ return (
 
 
 
-      <Grid item xs={12} lg={6}>
+        <Grid item xs={12} lg={6}>
           <Stack spacing={1} height="100%">
             <Typography
               variant="h6"
@@ -67,21 +91,21 @@ return (
                 fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem", lg: "1rem", xl: "2rem" },
                 fontWeight: '600',
               }}
-              
+
             >
-              Popular Destinations
+              Popular Cities to know
             </Typography>
 
             <Grid container style={{ marginTop: "6%" }}>
               {[
-                { title: "Nearby", image: banner2 },
+                { title: "Nearby", image: nearby },
                 { title: "Noida", image: banner3 },
                 { title: "Pune", image: banner4 },
                 { title: "Bangalore", image: banner5 },
                 { title: "Allahabad", image: banner2 },
                 { title: "Lucknow", image: banner3 },
                 { title: "Varansi", image: banner4 },
-                { title: "See Cities", image: banner5 },
+                { title: "See Cities", image: city },
               ].map((place, index) => (
                 <Grid item xs={3} key={index} marginBottom={3}>
                   <Link href={`/furniture-3/categories/${place.title.toLowerCase()}`} passHref>
@@ -131,9 +155,9 @@ return (
                 fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem", lg: "1rem", xl: "2rem" },
                 fontWeight: '600',
               }}
-              
+
             >
-              Mostly Preferred 
+              Mostly Preferred properties
             </Typography>
 
 
@@ -150,18 +174,80 @@ return (
                       loop
                       style={{ "--swiper-pagination-color": "white" }}
                     >
-                      {[homeImage1, homeImage2, homeImage3].map((image, index) => (
-                        <SwiperSlide key={index}>
+                      {slidesData.map((slide, index) => (
+                        <SwiperSlide key={index} style={{ position: "relative" }}>
+
                           <LazyImage
-                            src={image}
-                            alt={`Home Slide ${index + 1}`}
+                            src={slide.image}
+                            alt={`Slide ${index + 1}`}
                             sx={{
                               width: "100%",
                               height: "auto",
                               maxHeight: { xs: "250px", sm: "300px", md: "300px" },
                               borderRadius: "8px",
+                    
+                              filter: "brightness(0.6)",
                             }}
                           />
+
+
+                          <Box
+                            sx={{
+                              position: "absolute",
+                              top: "50%",
+                              left: "35%",
+                              transform: "translate(-50%, -50%)",
+                              color: "white",
+                              padding: "10px",
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: "8px",
+                              maxWidth: "100%",
+                            }}
+                          >
+
+                            <Typography variant="h6" fontWeight="bold">
+                              {slide.title}
+                            </Typography>
+
+                            {slide.features.map((feature, i) => (
+                              <Box key={i} display="flex"  gap="4px">
+                                <i className="fas fa-check-circle" />
+                                <Typography variant="body2" style={{fontSize:"12px"}}>{feature}</Typography>
+                              </Box>
+                            ))}
+
+                            <Button
+                              variant="contained"
+                              sx={{
+                                background:"black",
+                                borderRadius: "6px",
+                                width: "fit-content",
+                                padding: "5px 10px",
+                                marginTop: "8px",
+                              }}
+                            >
+                              Book now
+                            </Button>
+                          </Box>
+
+                    
+                          <Box
+                            sx={{
+                              position: "absolute",
+                              bottom: "15px",
+                              right: "15px",
+                              color: "white",
+                              textAlign: "right",
+                            }}
+                          >
+                            <Typography variant="body2">
+                              Starting from
+                            </Typography>
+                            <Typography variant="h2" fontWeight="bold">
+                              {slide.price}
+                            </Typography>
+                          </Box>
                         </SwiperSlide>
                       ))}
                     </Swiper>
