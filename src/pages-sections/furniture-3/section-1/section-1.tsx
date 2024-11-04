@@ -56,28 +56,32 @@ return (
 
 
 
+
+
       <Grid item xs={12} lg={6}>
           <Stack spacing={1} height="100%">
             <Typography
               variant="h6"
               gutterBottom
               sx={{
-                fontSize: { xs: ".8rem", sm: "1.25rem", md: "1.5rem", lg: "1rem", xl: "2rem" },
+                fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem", lg: "1rem", xl: "2rem" },
+                fontWeight: '600',
               }}
+              
             >
               Popular Destinations
             </Typography>
 
-            <Grid container style={{ marginTop: "4%" }}>
+            <Grid container style={{ marginTop: "6%" }}>
               {[
-                { title: "Delhi", image: banner2 },
+                { title: "Nearby", image: banner2 },
                 { title: "Noida", image: banner3 },
                 { title: "Pune", image: banner4 },
                 { title: "Bangalore", image: banner5 },
                 { title: "Allahabad", image: banner2 },
                 { title: "Lucknow", image: banner3 },
                 { title: "Varansi", image: banner4 },
-                { title: "Kolkata", image: banner5 },
+                { title: "See Cities", image: banner5 },
               ].map((place, index) => (
                 <Grid item xs={3} key={index} marginBottom={3}>
                   <Link href={`/furniture-3/categories/${place.title.toLowerCase()}`} passHref>
@@ -124,15 +128,17 @@ return (
               variant="h6"
               gutterBottom
               sx={{
-                fontSize: { xs: ".8rem", sm: "1.25rem", md: "1.5rem", lg: "1rem", xl: "2rem" },
+                fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem", lg: "1rem", xl: "2rem" },
+                fontWeight: '600',
               }}
+              
             >
               Mostly Preferred 
             </Typography>
 
 
             {isClient && (
-              <Grid container style={{ marginTop: "2%" }}>
+              <Grid container style={{ marginTop: "6%" }}>
                 <Grid item xs={12}>
                   <Box display="flex" justifyContent="center">
                     <Swiper
@@ -170,6 +176,9 @@ return (
         <Grid item xs={12} lg={6}>
           <BannerOne />
         </Grid>
+
+
+
 
       </Grid>
     </div>

@@ -19,8 +19,10 @@ export default function BannerOne() {
         variant="h6"
         gutterBottom
         sx={{
-          fontSize: { xs: ".8rem", sm: "1.25rem", md: "1.5rem", lg: "1rem", xl: "2rem" },
+          fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem", lg: "1rem", xl: "2rem" },
+          fontWeight: '600',
         }}
+        
       >
         Near by You
       </Typography>
@@ -31,7 +33,7 @@ export default function BannerOne() {
 
 
 
-        <LazyImage src={banner1} alt="banner" style={{ height: "40%" }} />
+        <LazyImage src={banner1} alt="banner" style={{ height: "40%", marginTop:"10px"}}  />
 
 
         <div className="text-content">
